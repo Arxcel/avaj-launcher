@@ -17,7 +17,7 @@ public class ScenarioReader {
             mWeatherTower = wt;
             FileReader fr = new FileReader(filePath);
             Scanner sc = new Scanner(fr);
-            File file = new File("scenario");
+            File file = new File("scenario.txt");
             file.delete();
             if (sc.hasNextInt())
             {

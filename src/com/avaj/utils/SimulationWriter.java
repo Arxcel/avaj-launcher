@@ -7,7 +7,7 @@ public class SimulationWriter {
     static public void log(String logMessage)
     {
         try {
-            FileWriter writer = new FileWriter("simulation", true);
+            FileWriter writer = new FileWriter("simulation.txt", true);
             writer.write(logMessage + "\n");
             writer.close();
         } catch (Exception e)
