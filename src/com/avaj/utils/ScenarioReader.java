@@ -19,9 +19,13 @@ public class ScenarioReader {
             Scanner sc = new Scanner(fr);
             File file = new File("scenario.txt");
             file.delete();
-            if (sc.hasNextInt())
+            if (sc.hasNextLine())
             {
-                mWeatherChanges = sc.nextInt();
+                
+                String[] parts = sc.nextLine().split(" ");
+                if(parts.length != 1)
+                    throw new InputFileException("Wrong weather changes line format.");
+                mWeatherChanges = Integer.parseInt(parts[0]);
                 if (mWeatherChanges <= 0)
                     throw new InputFileException("Wrong number of weather changes.");
                 if (sc.hasNextLine()) sc.nextLine();
